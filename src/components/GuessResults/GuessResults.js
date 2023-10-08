@@ -11,7 +11,7 @@ function GuessResults({ guesses }) {
   return (
     <div className="guess-results">
       {guesses.length > 0 &&
-        guesses.map((guess, index) => <Guess key={`${guess}-${index}`} word={guess} />)}
+        guesses.map((guess, index) => <Guess key={`${guess}-${index}`} value={guess} />)}
       {placeholderRows.length > 0 && placeholderRows.map((row, index) => <Guess key={`${row}-${index}`} />)}
     </div>
   );

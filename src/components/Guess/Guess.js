@@ -1,11 +1,18 @@
 import React from "react";
 
-function Guess({ word }) {
+function Guess({ value }) {
   return (
     <p className="guess">
-      {word?.length > 0 &&
-        word.split('').map((letter, index) => <span className="cell" key={`${letter}-${index}`}>{letter}</span>)}
-      {!word && (
+      {value?.length > 0 &&
+        value.map((guess, index) => (
+          <span
+            className={`cell ${guess.status}`}
+            key={`${guess.letter}-${index}`}
+          >
+            {guess.letter}
+          </span>
+        ))}
+      {!value && (
         <>
           <span className="cell"></span>
           <span className="cell"></span>
